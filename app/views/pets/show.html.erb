@@ -1,24 +1,41 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @pet.name %>
-</p>
-
-<p>
-  <strong>Race:</strong>
-  <%= @pet.race %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @pet.birthdate %>
-</p>
-
-<p>
-  <strong>Client:</strong>
-  <%= @pet.client_id %>
-</p>
+ <table class="table table-bordered table-hover">
+  <tbody>
+    <tr>
+      <th><strong>Name:</strong></th>
+      <td><%= @pet.name %></td>
+    </tr>
+    <tr>
+      <th> <strong>Race:</strong></th>
+      <td>  <%= @pet.race %></td>
+    </tr>
+    <tr>
+      <th><strong>Birthdate:</strong></th>
+      <td> <%= @pet.birthdate %></td>
+    </tr>
+    <tr>
+      <th><strong>Client:</strong></th>
+      <td><%= @pet.client_id %></td>
+    </tr>
+    <tr>
+      <th><strong>Average weight:</strong></th>
+      <td><%= @pet.get_average_w %></td>
+    </tr>
+     <tr>
+      <th><strong>Average height:</strong></th>
+      <td><%=@pet.get_average_h%></td>
+    </tr>
+     <tr>
+      <th><strong>Max weight:</strong></th>
+      <td><%= @pet.get_max_w %></td>
+    </tr>
+     <tr>
+      <th><strong>Max height:</strong></th>
+      <td><%=@pet.get_max_h%></td>
+    </tr>
+  </tbody>
+</table>
+<a href="<%=  pet_pet_histories_path(@pet) %>" class="btn btn-success text-white">View All Histories</a>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
