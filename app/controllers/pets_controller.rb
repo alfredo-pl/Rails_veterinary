@@ -13,10 +13,12 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
+    @clients = Client.all.map{ |client| [client.name, client.id]}
   end
 
   # GET /pets/1/edit
   def edit
+    @clients = Client.all.map{ |client| [client.name, client.id]}
   end
 
   # POST /pets or /pets.json
