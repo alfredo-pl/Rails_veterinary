@@ -8,6 +8,8 @@ class ClientsController < ApplicationController
 
   # GET /clients/1 or /clients/1.json
   def show
+    @pets_client = Pet.where("client_id = ?", params[:id])
+    @pets = @pets_client.map{ |client| client}
   end
 
   # GET /clients/new
