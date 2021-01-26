@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_021602) do
     t.string "name"
     t.string "race"
     t.date "birthdate"
-    t.integer "client_id", null: false
+    t.integer "client_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["client_id"], name: "index_pets_on_client_id"
